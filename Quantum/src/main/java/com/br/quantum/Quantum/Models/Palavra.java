@@ -7,7 +7,9 @@ package com.br.quantum.Quantum.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.*;
+import static javax.persistence.CascadeType.ALL;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 /**
@@ -26,6 +28,9 @@ public class Palavra implements Serializable {
 
     @Column(name = "palavra", nullable = false)
     private String palavra;
+
+    @OneToMany(cascade = ALL, mappedBy = "palavra")
+    private List<Conceito> conceitos;
 
     public Palavra() {
     }
@@ -53,6 +58,14 @@ public class Palavra implements Serializable {
 
     public void setPalavra(String palavra) {
         this.palavra = palavra;
+    }
+
+    public List<Conceito> getConceitos() {
+        return conceitos;
+    }
+
+    public void setConceitos(List<Conceito> conceitos) {
+        this.conceitos = conceitos;
     }
 
 }

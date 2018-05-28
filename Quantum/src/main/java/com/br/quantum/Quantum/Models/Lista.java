@@ -19,13 +19,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Lista implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column(name = "nome", nullable = false, length = 50)
     private String nome;
 
-    @OneToMany(cascade = ALL, mappedBy = "listas")
+    @ManyToOne
+    @JoinColumn(name="usuario", nullable = false)
     private Usuario usuario;
 
     public Lista() {

@@ -24,7 +24,8 @@ public class Conceito implements Serializable {
     @Column(name = "significado", nullable = false, length = 100)
     private String significado;
 
-    @OneToOne(cascade = ALL, mappedBy = "conceito")
+    @ManyToOne
+    @JoinColumn(name="palavra", nullable = false)
     private Palavra palavra;
 
     @ManyToOne

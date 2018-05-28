@@ -1,4 +1,4 @@
-package com.br.quantum.Quantum.Quantum;
+package com.br.quantum.Quantum;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
