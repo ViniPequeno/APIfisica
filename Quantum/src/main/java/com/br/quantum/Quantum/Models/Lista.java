@@ -8,7 +8,6 @@ package com.br.quantum.Quantum.Models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
 import javax.persistence.*;
-import static javax.persistence.CascadeType.ALL;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity

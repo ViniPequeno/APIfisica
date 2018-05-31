@@ -26,7 +26,7 @@ public class Questoes {
     private Long id;
     private String codigo;
     private String enunciado;
-    private char respostaCerta;
+    private Character respostaCerta;
 
     @ManyToOne
     @JoinColumn(name = "lista", nullable = false)

@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Alternativas implements Serializable {
 
     @Id
-    private char letra;
+    private Character letra;
 
     private String resposta;
 
