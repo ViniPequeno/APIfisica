@@ -34,7 +34,7 @@ public class AlternativasController {
     }
 
     @GetMapping("/alternativas/{id}")
-    public Alternativas getAlternativasById(@PathVariable(value = "id") Character alternativaId) {
+    public Alternativas getAlternativasById(@PathVariable(value = "id") Long alternativaId) {
         return (Alternativas) alternativasRepositorio.findById(alternativaId)
                 .orElseThrow(() -> new ResourceNotFoundException("Alternativas", "id", alternativaId));
     }
@@ -46,7 +46,7 @@ public class AlternativasController {
 
     // Update a Alternativas
     @PutMapping("/alternativas/{id}")
-    public Alternativas updateAlternativas(@PathVariable(value = "id") Character alternativaId,
+    public Alternativas updateAlternativas(@PathVariable(value = "id") Long alternativaId,
             @Valid @RequestBody Alternativas alternativaDetails) {
 
         Alternativas alternativa = alternativasRepositorio.findById(alternativaId)
@@ -59,7 +59,7 @@ public class AlternativasController {
     }
 
     @DeleteMapping("/alternativas/{id}")
-    public ResponseEntity<?> deleteAlternativas(@PathVariable(value = "id") Character alternativaId) {
+    public ResponseEntity<?> deleteAlternativas(@PathVariable(value = "id") Long alternativaId) {
         Alternativas alternativa = alternativasRepositorio.findById(alternativaId)
                 .orElseThrow(() -> new ResourceNotFoundException("Alternativas", "id", alternativaId));
 

@@ -12,6 +12,9 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Alternativas implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private Character letra;
 
     private String resposta;

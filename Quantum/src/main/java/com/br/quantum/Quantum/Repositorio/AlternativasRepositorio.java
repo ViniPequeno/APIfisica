@@ -12,6 +12,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author vinic
  */
-public interface AlternativasRepositorio extends JpaRepository<Alternativas, Character> {
+public interface AlternativasRepositorio extends JpaRepository<Alternativas, Long> {
 
 }

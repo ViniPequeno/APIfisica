@@ -25,22 +25,16 @@ public class Lista implements Serializable {
     private String nome;
 
     @ManyToOne
-    @JoinColumn(name="usuario", nullable = false)
+    @JoinColumn(name = "usuario", nullable = false)
     private Usuario usuario;
 
-    public Lista() {
-    }
+    @Column(name = "codigo", nullable = true, length = 20)
+    private String codigo;
+    @Column(name = "senha", nullable = true, length = 20)
+    private String senha;
 
-    public Lista(String nome, Usuario usuario) {
-        this.nome = nome;
-        this.usuario = usuario;
-    }
-
-    public Lista(Long id, String nome, Usuario usuario) {
-        this.id = id;
-        this.nome = nome;
-        this.usuario = usuario;
-    }
+    @Column(name = "tipo", nullable = false)
+    private char tipo;
 
     public Long getId() {
         return id;
@@ -64,6 +58,30 @@ public class Lista implements Serializable {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
     }
 
 }
